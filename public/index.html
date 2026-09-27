@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Text Summarizer — Summarize Any Text in Seconds (Free)</title>
+<meta name="description" content="Free AI text summarizer. Paste any article, email, or document and get a concise summary in seconds. Powered by Llama 3.2 on Cloudflare Workers AI.">
+<meta name="keywords" content="ai text summarizer, summarize text, free summarizer, article summarizer, ai summary generator">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta name="theme-color" content="#0369a1">
+
+<link rel="canonical" href="https://toolara.dev/ai-text-summarizer/">
+<link rel="alternate" hreflang="en" href="https://toolara.dev/ai-text-summarizer/">
+<link rel="alternate" hreflang="zh-Hans" href="https://toolara.dev/ai-text-summarizer/zh/">
+<link rel="alternate" hreflang="x-default" href="https://toolara.dev/ai-text-summarizer/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI Text Summarizer — Summarize Any Text">
+<meta property="og:description" content="Paste any text, get a concise summary in seconds.">
+<meta property="og:url" content="https://toolara.dev/ai-text-summarizer/">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "AI Text Summarizer",
+  "url": "https://toolara.dev/ai-text-summarizer/",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "description": "Free AI text summarizer that condenses long text into short, medium, or long summaries.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="hero">
+  <div class="lang-switch">
+    <select id="langSelect" onchange="setLang(this.value)" aria-label="Language">
+      <option value="en">English</option>
+      <option value="zh">简体中文</option>
+    </select>
+  </div>
+  <div class="hero-inner">
+    <div class="hero-badge">📝 AI-powered</div>
+    <h1 data-i18n="title">AI Text Summarizer</h1>
+    <p data-i18n="subtitle">Paste any article, email, or document. Get a concise summary in seconds.</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="card">
+    <h2 class="visually-hidden" data-i18n="calcHeading">Summarizer</h2>
+
+    <label for="length" data-i18n="lengthLabel">Summary length</label>
+    <select id="length">
+      <option value="short" data-i18n="lenShort">Short — 1-2 sentences</option>
+      <option value="medium" selected data-i18n="lenMedium">Medium — 3-5 sentences</option>
+      <option value="long" data-i18n="lenLong">Long — 2-3 paragraphs</option>
+    </select>
+
+    <label for="inputText" data-i18n="inputLabel">Paste text to summarize</label>
+    <textarea id="inputText" rows="10" placeholder="Paste your article, email, or document here..."></textarea>
+
+    <div class="char-count"><span id="charCount">0</span> / 8000</div>
+
+    <button class="calc" type="button" id="summarizeBtn" onclick="summarize()" data-i18n="calcBtn">Summarize text</button>
+
+    <div id="loading" class="loading" style="display:none;">
+      <div class="spinner"></div>
+      <div data-i18n="loadingText">Summarizing...</div>
+    </div>
+
+    <div id="error" class="error" style="display:none;"></div>
+
+    <div id="result" role="region" aria-live="polite">
+      <div class="result-header">
+        <div class="result-label" data-i18n="resultLabel">Summary</div>
+        <button class="copy-btn" type="button" onclick="copyResult()" data-i18n="copyBtn">Copy</button>
+        <span class="copy-copied" id="copyCopied" data-i18n="copyCopied">Copied!</span>
+      </div>
+      <div class="result-box" id="resultText"></div>
+      <div class="result-meta" id="resultMeta"></div>
+      <div class="result-disclaimer" data-i18n="resultDisclaimer">AI summaries can miss nuance. Review the full source for important decisions.</div>
+    </div>
+  </section>
+
+  <section>
+    <h2 data-i18n="whatIsTitle">What does this tool do?</h2>
+    <p data-i18n="whatIsText">Long documents take time to read. This tool uses a large language model to extract the core message and condense it into a summary — short, medium, or long, depending on your needs. It works on articles, emails, reports, transcripts, and any other text you need to digest quickly.</p>
+  </section>
+
+  <section>
+    <h2 data-i18n="useCasesTitle">Common use cases</h2>
+    <ul>
+      <li data-i18n="use1"><strong>Articles and blog posts</strong> — Get the gist before deciding to read the full piece.</li>
+      <li data-i18n="use2"><strong>Long emails</strong> — Extract the key asks and action items from verbose threads.</li>
+      <li data-i18n="use3"><strong>Research papers</strong> — Understand the abstract and main findings without reading everything.</li>
+      <li data-i18n="use4"><strong>Meeting transcripts</strong> — Turn an hour of conversation into a usable recap.</li>
+      <li data-i18n="use5"><strong>Reports and documentation</strong> — Quickly grasp structure and conclusions.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2 data-i18n="faqTitle">Frequently asked questions</h2>
+    <h3 data-i18n="faq1q">Is this tool free?</h3>
+    <p data-i18n="faq1a">Yes. The tool runs on Cloudflare Workers AI with a free daily quota. Normal personal use won't hit any limits.</p>
+
+    <h3 data-i18n="faq2q">Is my text stored?</h3>
+    <p data-i18n="faq2a">No. Your text is processed in memory and discarded. Nothing is stored, logged, or used for training.</p>
+
+    <h3 data-i18n="faq3q">What is the maximum input length?</h3>
+    <p data-i18n="faq3a">8,000 characters per request. Longer inputs are truncated to the first 8,000 characters. For very long documents, split them into sections and summarize each.</p>
+
+    <h3 data-i18n="faq4q">How accurate is the summary?</h3>
+    <p data-i18n="faq4a">The model captures the main points reliably. However, summaries can miss nuance, omit important caveats, or misread ambiguous phrasing. For critical decisions, always read the original.</p>
+
+    <h3 data-i18n="faq5q">What model do you use?</h3>
+    <p data-i18n="faq5a">We use Meta's Llama 3.2 3B model, running on Cloudflare's global edge network. It's fast and capable for summarization tasks.</p>
+
+    <div class="disclaimer" data-i18n="disclaimer"><strong>Disclaimer:</strong> Do not use summaries as a substitute for reading legal, medical, or financial documents in full.</div>
+  </section>
+</main>
+
+<footer class="footer" data-i18n="footer">Runs on Cloudflare Workers AI. Your text is not stored.</footer>
+
+<script src="js/i18n.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
