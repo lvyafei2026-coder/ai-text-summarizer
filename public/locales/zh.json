@@ -1,5 +1,16 @@
 {
   "title": "Toolara Summarize",
+  "heroTitle": "长文几秒读完，只留重点",
+  "heroCta": "免费试用",
+  "heroPoint1": "支持最长 8,000 字长文",
+  "heroPoint2": "三档长度：短 / 中 / 详",
+  "heroPoint3": "只留要点，不废话",
+  "heroPreviewLabel": "示例",
+  "heroInputLabel": "输入",
+  "heroInputText": "一份 3,000 字的年度行业报告",
+  "heroPreviewBody": "摘要（中等长度）\n\n• 远程办公平均减少 42% 通勤时间\n• 团队被打断变少，但决策变慢\n• 8 项研究中有 6 项显示混合办公更能留住人",
+  "heroPreviewTag1": "中等长度",
+  "heroPreviewTag2": "要点列表",
   "subtitle": "粘贴任何文章、邮件或文档，几秒内生成简洁的摘要。",
   "calcHeading": "摘要生成",
   "lengthLabel": "摘要长度",
@@ -39,11 +50,12 @@
   "errGeneric": "出错了，请重试。",
   "errNetwork": "网络错误，请重试。",
   "errRateLimit": "请求过于频繁，请稍等一分钟后再试。",
-  "heroBadge": "📝 免费 · 任意文本 · 3 种长度",
+  "heroBadge": "免费 · 任意文本 · 三档长度",
   "f1t": "为长文而生",
   "f1d": "文章、报告、邮件、访谈记录都行，单次最多 8,000 字符。",
   "f2t": "短中长自选",
   "f2d": "从一句话 TL;DR 到结构化摘要，按需选择详略。",
   "f3t": "抓重点不凑数",
-  "f3d": "提炼核心信息，而不是随机删句凑长度。"
+  "f3d": "提炼核心信息，而不是随机删句凑长度。",
+  "ph1": "把文章、邮件或文档粘贴到这里…"
 }

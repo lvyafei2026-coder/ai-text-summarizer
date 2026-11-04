@@ -40,7 +40,7 @@
 }
 </script>
 
-<link rel="stylesheet" href="/css/style.css?v=20261105a">
+<link rel="stylesheet" href="/css/style.css?v=20261105e">
 <style id="footer-groups-css">
 .site-footer-grid{grid-template-columns:minmax(0,0.85fr) minmax(0,2.65fr)!important;gap:40px!important}
 .site-footer-column:nth-child(2){grid-row:1/span 2!important}
@@ -78,16 +78,34 @@
 
 
 <header class="hero">
-
   <div class="hero-inner">
-    <div class="hero-badge" data-i18n="heroBadge">📝 Free · Any text · 3 lengths</div>
-    <h1 data-i18n="title">AI Text Summarizer</h1>
-    <p data-i18n="subtitle">Paste any article, email, or document. Get a concise summary in seconds.</p>
+    <div class="hero-copy">
+      <div class="hero-badge" data-i18n="heroBadge">Free · Any text · 3 lengths</div>
+      <h1 data-i18n="heroTitle">Long articles, key points in seconds</h1>
+      <p data-i18n="subtitle">Paste any article, email, or document. Get a concise summary in seconds.</p>
+      <ul class="hero-points">
+        <li data-i18n="heroPoint1">Articles up to 8,000 words</li>
+        <li data-i18n="heroPoint2">Three lengths: short, medium, detailed</li>
+        <li data-i18n="heroPoint3">Key points only, no fluff</li>
+      </ul>
+      <a class="hero-cta" href="#tool" data-i18n="heroCta">Try it now</a>
+    </div>
+    <div class="hero-preview">
+      <div class="hp-bar"><span class="hp-dots"><i></i><i></i><i></i></span><span data-i18n="heroPreviewLabel">Example</span></div>
+      <div class="hp-prompt"><span class="hp-label" data-i18n="heroInputLabel">INPUT</span><span data-i18n="heroInputText">A 3,000-word annual industry report</span></div>
+      <div class="hp-arrow"></div>
+      <div class="hp-body" data-i18n="heroPreviewBody">Summary (medium)
+
+• Remote work cut commute time by 42% on average
+• Teams report fewer interruptions, slower decisions
+• Hybrid schedules won on retention in 6 of 8 studies</div>
+      <div class="hp-tags"><span data-i18n="heroPreviewTag1">Medium length</span><span data-i18n="heroPreviewTag2">Bullet points</span></div>
+    </div>
   </div>
 </header>
 
 <main class="wrap">
-  <section class="card">
+  <section class="card" id="tool">
     <div class="studio"><div class="studio-input">
     <h2 class="visually-hidden" data-i18n="calcHeading">Summarizer</h2>
 
@@ -99,7 +117,7 @@
     </select>
 
     <label for="inputText" data-i18n="inputLabel">Paste text to summarize</label>
-    <textarea id="inputText" rows="10" placeholder="Paste your article, email, or document here..."></textarea>
+    <textarea id="inputText" rows="10" placeholder="Paste your article, email, or document here..." data-i18n-ph="ph1"></textarea>
 
     <div class="char-count"><span id="charCount">0</span> / 8000</div>
 

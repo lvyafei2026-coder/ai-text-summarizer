@@ -1,5 +1,16 @@
 {
   "title": "Toolara Summarize",
+  "heroTitle": "Long articles, key points in seconds",
+  "heroCta": "Try it now, free",
+  "heroPoint1": "Articles up to 8,000 words",
+  "heroPoint2": "Three lengths: short, medium, detailed",
+  "heroPoint3": "Key points only, no fluff",
+  "heroPreviewLabel": "Example",
+  "heroInputLabel": "INPUT",
+  "heroInputText": "A 3,000-word annual industry report",
+  "heroPreviewBody": "Summary (medium)\n\n• Remote work cut commute time by 42% on average\n• Teams report fewer interruptions, slower decisions\n• Hybrid schedules won on retention in 6 of 8 studies",
+  "heroPreviewTag1": "Medium length",
+  "heroPreviewTag2": "Bullet points",
   "subtitle": "Paste any article, email, or document. Get a concise summary in seconds.",
   "calcHeading": "Summarizer",
   "lengthLabel": "Summary length",
@@ -39,11 +50,12 @@
   "errGeneric": "Something went wrong. Please try again.",
   "errNetwork": "Network error. Please try again.",
   "errRateLimit": "Too many requests. Please wait a minute and try again.",
-  "heroBadge": "📝 Free · Any text · 3 lengths",
+  "heroBadge": "Free · Any text · 3 lengths",
   "f1t": "Built for long reads",
   "f1d": "Articles, reports, emails and transcripts — up to 8,000 characters per run.",
   "f2t": "Short, medium or long",
   "f2d": "From a one-line TL;DR to a structured recap — pick the depth you need.",
   "f3t": "Key points, not filler",
-  "f3d": "The model extracts the core message instead of trimming sentences at random."
+  "f3d": "The model extracts the core message instead of trimming sentences at random.",
+  "ph1": "Paste your article, email, or document here..."
 }
