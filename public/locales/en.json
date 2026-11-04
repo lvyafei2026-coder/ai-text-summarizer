@@ -38,5 +38,12 @@
   "errShort": "Please paste at least 100 characters.",
   "errGeneric": "Something went wrong. Please try again.",
   "errNetwork": "Network error. Please try again.",
-  "errRateLimit": "Too many requests. Please wait a minute and try again."
+  "errRateLimit": "Too many requests. Please wait a minute and try again.",
+  "heroBadge": "📝 Free · Any text · 3 lengths",
+  "f1t": "Built for long reads",
+  "f1d": "Articles, reports, emails and transcripts — up to 8,000 characters per run.",
+  "f2t": "Short, medium or long",
+  "f2d": "From a one-line TL;DR to a structured recap — pick the depth you need.",
+  "f3t": "Key points, not filler",
+  "f3d": "The model extracts the core message instead of trimming sentences at random."
 }

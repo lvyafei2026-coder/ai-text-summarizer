@@ -40,7 +40,7 @@
 }
 </script>
 
-<link rel="stylesheet" href="/css/style.css?v=20261104a">
+<link rel="stylesheet" href="/css/style.css?v=20261105a">
 <style id="footer-groups-css">
 .site-footer-grid{grid-template-columns:minmax(0,0.85fr) minmax(0,2.65fr)!important;gap:40px!important}
 .site-footer-column:nth-child(2){grid-row:1/span 2!important}
@@ -80,7 +80,7 @@
 <header class="hero">
 
   <div class="hero-inner">
-    <div class="hero-badge">📝 AI-powered</div>
+    <div class="hero-badge" data-i18n="heroBadge">📝 Free · Any text · 3 lengths</div>
     <h1 data-i18n="title">AI Text Summarizer</h1>
     <p data-i18n="subtitle">Paste any article, email, or document. Get a concise summary in seconds.</p>
   </div>
@@ -137,35 +137,33 @@
   <section>
     <h2 data-i18n="whatIsTitle">What does this tool do?</h2>
     <p data-i18n="whatIsText">Long documents take time to read. This tool uses a large language model to extract the core message and condense it into a summary — short, medium, or long, depending on your needs. It works on articles, emails, reports, transcripts, and any other text you need to digest quickly.</p>
+
+  <div class="what-grid">
+    <div class="what-card"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg><div class="wc-t" data-i18n="f1t">Built for long reads</div><p class="wc-d" data-i18n="f1d">Articles, reports, emails and transcripts — up to 8,000 characters per run.</p></div>
+    <div class="what-card"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg><div class="wc-t" data-i18n="f2t">Short, medium or long</div><p class="wc-d" data-i18n="f2d">From a one-line TL;DR to a structured recap — pick the depth you need.</p></div>
+    <div class="what-card"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg><div class="wc-t" data-i18n="f3t">Key points, not filler</div><p class="wc-d" data-i18n="f3d">The model extracts the core message instead of trimming sentences at random.</p></div>  </div>
   </section>
 
   <section>
     <h2 data-i18n="useCasesTitle">Common use cases</h2>
-    <ul>
-      <li data-i18n="use1"><strong>Articles and blog posts</strong> — Get the gist before deciding to read the full piece.</li>
-      <li data-i18n="use2"><strong>Long emails</strong> — Extract the key asks and action items from verbose threads.</li>
-      <li data-i18n="use3"><strong>Research papers</strong> — Understand the abstract and main findings without reading everything.</li>
-      <li data-i18n="use4"><strong>Meeting transcripts</strong> — Turn an hour of conversation into a usable recap.</li>
-      <li data-i18n="use5"><strong>Reports and documentation</strong> — Quickly grasp structure and conclusions.</li>
-    </ul>
+    <div class="tip-grid">
+    <div class="tip-card" data-i18n="use1">Articles and blog posts — Get the gist before deciding to read the full piece.</div>
+    <div class="tip-card" data-i18n="use2">Long emails — Extract the key asks and action items from verbose threads.</div>
+    <div class="tip-card" data-i18n="use3">Research papers — Understand the abstract and main findings without reading everything.</div>
+    <div class="tip-card" data-i18n="use4">Meeting transcripts — Turn an hour of conversation into a usable recap.</div>
+    <div class="tip-card" data-i18n="use5">Reports and documentation — Quickly grasp structure and conclusions.</div>
+  </div>
   </section>
 
   <section>
     <h2 data-i18n="faqTitle">Frequently asked questions</h2>
-    <h3 data-i18n="faq1q">Is this tool free?</h3>
-    <p data-i18n="faq1a">Yes. The tool runs on Cloudflare Workers AI with a free daily quota. Normal personal use won't hit any limits.</p>
-
-    <h3 data-i18n="faq2q">Is my text stored?</h3>
-    <p data-i18n="faq2a">No. Your text is processed in memory and discarded. Nothing is stored, logged, or used for training.</p>
-
-    <h3 data-i18n="faq3q">What is the maximum input length?</h3>
-    <p data-i18n="faq3a">8,000 characters per request. Longer inputs are truncated to the first 8,000 characters. For very long documents, split them into sections and summarize each.</p>
-
-    <h3 data-i18n="faq4q">How accurate is the summary?</h3>
-    <p data-i18n="faq4a">The model captures the main points reliably. However, summaries can miss nuance, omit important caveats, or misread ambiguous phrasing. For critical decisions, always read the original.</p>
-
-    <h3 data-i18n="faq5q">What model do you use?</h3>
-    <p data-i18n="faq5a">We use Meta's Llama 3.2 3B model, running on Cloudflare's global edge network. It's fast and capable for summarization tasks.</p>
+    <div class="faq-list">
+  <details class="faq-item"><summary data-i18n="faq1q">Is this tool free?</summary><div class="faq-a"><p data-i18n="faq1a">Yes. The tool runs on Cloudflare Workers AI with a free daily quota. Normal personal use won't hit any limits.</p></div></details>
+  <details class="faq-item"><summary data-i18n="faq2q">Is my text stored?</summary><div class="faq-a"><p data-i18n="faq2a">No. Your text is processed in memory and discarded. Nothing is stored, logged, or used for training.</p></div></details>
+  <details class="faq-item"><summary data-i18n="faq3q">What is the maximum input length?</summary><div class="faq-a"><p data-i18n="faq3a">8,000 characters per request. Longer inputs are truncated to the first 8,000 characters. For very long documents, split them into sections and summarize each.</p></div></details>
+  <details class="faq-item"><summary data-i18n="faq4q">How accurate is the summary?</summary><div class="faq-a"><p data-i18n="faq4a">The model captures the main points reliably. However, summaries can miss nuance, omit important caveats, or misread ambiguous phrasing. For critical decisions, always read the original.</p></div></details>
+  <details class="faq-item"><summary data-i18n="faq5q">What model do you use?</summary><div class="faq-a"><p data-i18n="faq5a">We use Meta's Llama 3.2 3B model, running on Cloudflare's global edge network. It's fast and capable for summarization tasks.</p></div></details>
+  </div>
 
     <div class="disclaimer" data-i18n="disclaimer"><strong>Disclaimer:</strong> Do not use summaries as a substitute for reading legal, medical, or financial documents in full.</div>
   </section>
